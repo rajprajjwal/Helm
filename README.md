@@ -6,9 +6,6 @@ The YAML files are generated with some pre-configured values and needs to be mod
 * `/mediawiki-1.34/Dockerfile` - For installing and configuring Mediawiki v1.34 on a Centos7 container.
 * `/mariadb-wiki/Dockerfile`  - For installing and configuring Mariadb for handling Mediawiki database.
 
-## Docker-compose
-* `docker-compose.yml` file has been provided to setup the Mediawiki and Mariadb services on a docker node.
-
 ## Kubernetes
 The kubernetes objects are defined in following files: `mediawiki-deployment.yaml` `mediawiki-service.yaml` `db-deployment.yaml` `db-service.yaml` `env-configmap.yaml` `wikinetwork-networkpolicy.yaml` `secret.yaml`
 
@@ -25,6 +22,14 @@ kubectl apply -f mediawiki-deployment.yaml,mediawiki-service.yaml,db-deployment.
 
 Once both the Mediawiki and db pods are up and running, the app UI can be accessed using the Mediawiki service hostname/ip and port.
 
+PS C:\Users\RajKumar\Documents\Udemy Courses\Helm\work\05-07-2023> kubectl get svc
+NAME         TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)          AGE
+db           ClusterIP      10.0.12.77    <none>           33060/TCP        9s
+kubernetes   ClusterIP      10.0.0.1      <none>           443/TCP          7h
+mediawiki    LoadBalancer   10.0.227.11   20.246.225.227   8000:31580/TCP   9s
+
+
+
 Configure the Mediawiki by providing the values as below:
 * Database Host : `db:33060`
 * Database Name : `wikidatabase`
@@ -40,5 +45,5 @@ After final submission you it will generate a LocalSettings.php file which needs
 Install the Helm chart using command: 
 
 ```bash
-helm install mediawiki ./mediawiki-chart
+helm install  mediawiki ./helm-chart-sources/helm-chart-mediawiki-test
 ```

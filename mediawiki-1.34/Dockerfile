@@ -6,7 +6,7 @@ RUN yum install -y --setopt=tsflags=nodocs httpd24-httpd rh-php73-php rh-php73-p
 
 WORKDIR /opt/rh/httpd24/root/var/www/html
 
-RUN wget https://releases.wikimedia.org/mediawiki/1.34/mediawiki-1.34.4.tar.gz && tar -zxf mediawiki-1.34.4.tar.gz && mv mediawiki-1.34.4 mediawiki && rm -f mediawiki-1.34.4.tar.gz
+RUN wget  https://releases.wikimedia.org/mediawiki/1.40/mediawiki-1.40.0.tar.gz && tar -zxf mediawiki-1.40.0.tar.gz && mv mediawiki-1.40.0 mediawiki && rm -f mediawiki-1.40.0.tar.gz
 
 RUN sed -i -e 's|^DocumentRoot "/opt/rh/httpd24/root/var/www/html"|DocumentRoot "/opt/rh/httpd24/root/var/www/html/mediawiki"|' -e 's|    DirectoryIndex index.html|    DirectoryIndex index.html index.html.var index.php|' -e 's|^<Directory "/opt/rh/httpd24/root/var/www/html">|<Directory "/opt/rh/httpd24/root/var/www/html/mediawiki">|' /opt/rh/httpd24/root/etc/httpd/conf/httpd.conf
 

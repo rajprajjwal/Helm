@@ -1,4 +1,4 @@
-name: mediawiki-chart
+name: helm-chart-test
 description: Helm Chart for deploying Mediawiki v1.34
 version: 0.0.1
 apiVersion: v1
