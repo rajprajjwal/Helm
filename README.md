@@ -52,7 +52,7 @@ db           ClusterIP      10.0.11.81     <none>        33060/TCP        10s
 kubernetes   ClusterIP      10.0.0.1       <none>        443/TCP          7h28m
 mediawiki    LoadBalancer   10.0.195.227   20.84.33.88   8000:31363/TCP   10s
 
-we can use external ip with port on url and can get mediawiki 
+we can use external ip with port on url and can get mediawiki , use as per your external ip for the same.
 
 http://20.84.33.88:8000/mw-config/index.php?page=Welcome
 
