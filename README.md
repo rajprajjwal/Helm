@@ -1,5 +1,5 @@
 # mediawiki
-Contains docker and kubernetes files for setting up the Mediawiki v1.34 service on Kubernetes cluster
+Contains docker and kubernetes files for setting up the Mediawiki v1.40 service on Kubernetes cluster
 The YAML files are generated with some pre-configured values and needs to be modified for further generalization.
 
 ## Dockerfiles
