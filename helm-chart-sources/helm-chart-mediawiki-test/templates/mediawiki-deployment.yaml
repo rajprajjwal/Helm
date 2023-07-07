@@ -16,7 +16,7 @@ spec:
         service: mediawiki
     spec:
       containers:
-      - image: supreetraut/mediawiki-1.34
+      - image: mediawiki
         imagePullPolicy: Always
         name: mediawiki
         ports:
